@@ -34,7 +34,7 @@ const Sudoko = () => {
       const sanitizedGrid = grid.map(row => row.slice());
   
       // Sending the sanitized grid to the backend
-      const response = await axios.post('http://localhost:8000/sudoko/solve', { grid: sanitizedGrid });
+      const response = await axios.post('https://sudoko-solver-backend-1.onrender.com/sudoko/solve', { grid: sanitizedGrid });
   
       // Check if the response contains a solved board and update the state
       if (response.data&&response.data.solvedBoard) {
