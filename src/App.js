@@ -1,5 +1,5 @@
 
-import './App.css';
+
 import Sudoko from './components/Sudoko';
 
 function App() {
