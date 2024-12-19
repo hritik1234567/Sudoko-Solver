@@ -1,0 +1,148 @@
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    overflow: hidden;
+  }
+  
+  .sudoku-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    border: 5px solid #333333;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.8s ease-out;
+  }
+  
+  /* Grid Styling */
+  .sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .sudoku-row {
+    display: contents;
+  }
+  
+  .sudoku-cell {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #ccc;
+    outline: none;
+    background: #f9f9f9;
+    animation: popIn 0.5s ease-out;
+  }
+  
+  .sudoku-cell:focus {
+    border: 2px solid #74b9ff;
+    background: #dff9fb;
+  }
+  
+  /* Highlight 3x3 Matrix Borders */
+  .sudoku-grid input:nth-child(3n+4):not(:last-child),
+  .sudoku-grid input:nth-child(3n+1) {
+    border-left: 3px solid #333;
+  }
+  
+  .sudoku-grid .sudoku-row:nth-child(3n+1) input {
+    border-top: 3px solid #333;
+  }
+  
+ 
+
+  /* Button Styling */
+  /* Button Styling */
+button {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .generate-button {
+    background: linear-gradient(135deg, #6c5ce7, #0984e3);
+    color: white;
+  }
+  
+  .generate-button:hover {
+    background: linear-gradient(135deg, #4834d4, #74b9ff);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .generate-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .reset-button {
+    background: linear-gradient(135deg, #e84393, #fd79a8);
+    color: white;
+    margin-top: 10px;
+  }
+  
+  .reset-button:hover {
+    background: linear-gradient(135deg, #d63031, #ff7675);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .reset-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  /* Animations */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes popIn {
+    from {
+      transform: scale(0.9);
+      opacity: 0.5;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .sudoku-cell {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+    }
+  
+    .generate-button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  
+  /* Enhanced Responsive Design */
